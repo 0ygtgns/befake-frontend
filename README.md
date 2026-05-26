@@ -192,7 +192,7 @@ befake-frontend/
 
 ## 📬 İletişim
 
-> *Ekip iletişim bilgilerini buraya ekleyin*
+📧 **E-posta:** [0gunesyigit@gmail.com](mailto:0gunesyigit@gmail.com)
 
 ---
 

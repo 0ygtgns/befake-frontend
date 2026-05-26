@@ -404,14 +404,7 @@ Dwell Bonus     = Ekranda kalma süresi (Intersection Observer API)
 
 ## 👥 EKİP & İLETİŞİM
 
-> *Bu bölümü kendi ekip bilgilerinizle doldurun*
-
-| Rol | İsim | Uzmanlık |
-|---|---|---|
-| **Kurucu / Ürün** | — | — |
-| **Frontend** | — | React.js, Animasyon |
-| **Backend** | — | Python, FastAPI, Neo4j |
-| **AI / ML** | — | LangGraph, NLP |
+📧 **E-posta:** [0gunesyigit@gmail.com](mailto:0gunesyigit@gmail.com)
 
 ---
 
