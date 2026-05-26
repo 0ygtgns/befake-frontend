@@ -1,0 +1,344 @@
+/* ================================================
+   Timeline — Medieval Social Feed
+   ================================================ */
+
+.timeline-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  transition: all var(--transition-dramatic);
+}
+
+/* --- Top Bar --- */
+.timeline-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 20px 0;
+  background: linear-gradient(to bottom, var(--bg-primary) 60%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.topbar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.topbar-logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text-gold);
+  letter-spacing: 0.05em;
+  transition: color var(--transition-dramatic);
+}
+
+.topbar-season {
+  font-size: 0.7rem;
+  font-family: var(--font-heading);
+  color: var(--text-muted);
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* --- Filter Tabs --- */
+.filter-tabs {
+  display: flex;
+  gap: 2px;
+  background: rgba(0,0,0,0.3);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  margin-bottom: 4px;
+}
+
+.filter-tab {
+  flex: 1;
+  padding: 8px 0;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.filter-tab.active {
+  background: var(--gold-dim);
+  color: var(--text-gold);
+  box-shadow: 0 0 12px var(--gold-glow);
+}
+
+.filter-tab:hover:not(.active) {
+  color: var(--text-secondary);
+  background: rgba(255,255,255,0.03);
+}
+
+/* --- Revolt Banner --- */
+.revolt-banner {
+  margin: 12px 20px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.05));
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  text-align: center;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.revolt-banner-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--revolt-red-light);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.revolt-banner-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.revolt-meter {
+  margin-top: 10px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(220, 38, 38, 0.15);
+  overflow: hidden;
+}
+
+.revolt-meter-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #dc2626, #f87171);
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px rgba(220, 38, 38, 0.5);
+}
+
+/* --- Post Feed --- */
+.feed {
+  padding: 8px 16px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* --- Post Card --- */
+.post-card {
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+}
+
+.post-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px 0;
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-strong);
+  flex-shrink: 0;
+}
+
+.post-avatar.royal {
+  border-color: var(--gold);
+  box-shadow: 0 0 10px var(--gold-glow);
+}
+
+.post-user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.post-username {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.royal-badge {
+  font-size: 0.65rem;
+  padding: 1px 8px;
+  border-radius: 10px;
+  background: var(--gold-dim);
+  color: var(--gold);
+  border: 1px solid rgba(212, 164, 76, 0.2);
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+}
+
+.post-meta {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.post-menu-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px;
+  transition: color var(--transition-fast);
+}
+
+.post-menu-btn:hover {
+  color: var(--text-secondary);
+}
+
+/* Post Body */
+.post-body {
+  padding: 12px 16px;
+}
+
+.post-text {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  margin-top: 8px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--bg-secondary);
+}
+
+/* Post Actions */
+.post-actions {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 14px;
+  gap: 4px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  font-family: var(--font-body);
+}
+
+.action-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+}
+
+.action-btn .emoji {
+  font-size: 1rem;
+}
+
+/* Revolt Button */
+.revolt-btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid var(--revolt-red);
+  border-radius: var(--radius-sm);
+  background: var(--revolt-red-dim);
+  color: var(--revolt-red-light);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.revolt-btn:hover {
+  background: var(--revolt-red);
+  color: #fff;
+  box-shadow: 0 0 20px var(--revolt-red-glow);
+  transform: translateY(-1px);
+}
+
+.revolt-btn.active {
+  background: var(--revolt-red);
+  color: #fff;
+  animation: pulse-gold 2s infinite;
+  --gold-glow: var(--revolt-red-glow);
+}
+
+/* --- Floating Action Button --- */
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 50%;
+  transform: translateX(calc(var(--max-width) / 2 - 36px));
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: var(--bg-card);
+  color: var(--gold);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md), 0 0 20px var(--gold-glow);
+  transition: all var(--transition-smooth);
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+
+.fab:hover {
+  background: var(--gold);
+  color: var(--bg-primary);
+  transform: translateX(calc(var(--max-width) / 2 - 36px)) scale(1.1);
+}
+
+/* --- Underground posts (revolt state) --- */
+.post-card.underground {
+  border-color: rgba(220, 38, 38, 0.2);
+  background: rgba(28, 12, 14, 0.85);
+}
+
+.underground-badge {
+  font-size: 0.65rem;
+  padding: 1px 8px;
+  border-radius: 10px;
+  background: var(--revolt-red-dim);
+  color: var(--revolt-red-light);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+}
